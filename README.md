@@ -1,4 +1,4 @@
-# Gin + AdminLTE框架 管理系统实例
+# Gin 集成 AdminLTE框架 管理后台实例
 
 
 编辑 config/config.yaml 配置数据库:
