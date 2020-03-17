@@ -1,4 +1,4 @@
-# Gin + Gorm 的 RESTful 实例
+# Gin + AdminLTE框架 管理系统实例
 
 
 编辑 config/config.yaml 配置数据库:
