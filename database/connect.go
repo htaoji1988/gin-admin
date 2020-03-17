@@ -1,8 +1,8 @@
 package database
 
 import (
-	"gin-gorm-example/config"
-	"gin-gorm-example/models"
+	"gin-admin/config"
+	"gin-admin/models"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )

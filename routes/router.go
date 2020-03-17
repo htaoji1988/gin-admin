@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"gin-gorm-example/controllers"
+	"gin-admin/controllers"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

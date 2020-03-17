@@ -3,8 +3,8 @@ package controllers
 import (
 	"crypto/md5"
 	"encoding/hex"
-	"gin-gorm-example/database"
-	"gin-gorm-example/models"
+	"gin-admin/database"
+	"gin-admin/models"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -28,7 +28,11 @@ func (a *AdminUser) Test(c *gin.Context) {
 }
 
 func (a *AdminUser) Template(c *gin.Context) {
-	c.HTML(200,"base.html",nil)
+	c.HTML(200, "base.html", nil)
+}
+
+func (a *AdminUser) UserManage(c *gin.Context) {
+	c.HTML(200, "base.html", nil)
 }
 
 func (a *AdminUser) Store(c *gin.Context) {

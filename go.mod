@@ -1,4 +1,4 @@
-module gin-gorm-example
+module gin-admin
 
 go 1.13
 

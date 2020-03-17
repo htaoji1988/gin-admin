@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"gin-gorm-example/config"
-	"gin-gorm-example/database"
-	"gin-gorm-example/routes"
+	"gin-admin/config"
+	"gin-admin/database"
+	"gin-admin/routes"
 )
 
 func main() {
