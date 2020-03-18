@@ -2,12 +2,17 @@ package routes
 
 import (
 	"gin-admin/controllers"
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
 func InitRouter() *gin.Engine {
 	router := gin.Default()
+	store := cookie.NewStore([]byte("secret"))
+	router.Use(sessions.Sessions("mysession", store))
+
 	router.StaticFS("/statics1", http.Dir("website/AdminLTE-2.4.12/bower_components"))
 	router.StaticFS("/statics2", http.Dir("website/AdminLTE-2.4.12/dist"))
 	router.StaticFS("/statics3", http.Dir("website/AdminLTE-2.4.12/plugins"))
@@ -17,7 +22,9 @@ func InitRouter() *gin.Engine {
 	{
 		adminUser := new(controllers.AdminUser)
 		web.GET("/test", adminUser.Test)
+		web.GET("/session_test", adminUser.SessionTest)
 		web.GET("/template_test", adminUser.Template)
+		web.GET("/login", adminUser.Login)
 	}
 
 	v1 := router.Group("/api/v1")
