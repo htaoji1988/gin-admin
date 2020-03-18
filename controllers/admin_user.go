@@ -28,12 +28,15 @@ func (a *AdminUser) Test(c *gin.Context) {
 }
 
 func (a *AdminUser) Template(c *gin.Context) {
-	c.HTML(200, "base.html", nil)
+	c.HTML(200, "users/user_manage.html", gin.H{
+		"main_navigation": "用户&&权限",
+		"title":           "用户管理",
+	})
 }
 
-func (a *AdminUser) UserManage(c *gin.Context) {
-	c.HTML(200, "base.html", nil)
-}
+//func (a *AdminUser) UserManage(c *gin.Context) {
+//	c.HTML(200, "base.html", nil)
+//}
 
 func (a *AdminUser) Store(c *gin.Context) {
 	var request CreateRequest

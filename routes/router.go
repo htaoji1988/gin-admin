@@ -11,8 +11,7 @@ func InitRouter() *gin.Engine {
 	router.StaticFS("/statics1", http.Dir("website/AdminLTE-2.4.12/bower_components"))
 	router.StaticFS("/statics2", http.Dir("website/AdminLTE-2.4.12/dist"))
 	router.StaticFS("/statics3", http.Dir("website/AdminLTE-2.4.12/plugins"))
-	router.LoadHTMLGlob("website/AdminLTE-2.4.12/*.html")
-	//router.LoadHTMLGlob("website/mypage/**/*.html")
+	router.LoadHTMLGlob("website/AdminLTE-2.4.12/pages/**/*.html")
 
 	web := router.Group("")
 	{
