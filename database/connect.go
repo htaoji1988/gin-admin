@@ -17,7 +17,7 @@ func InitDB() (*gorm.DB, error) {
 		db.DB().SetMaxIdleConns(conf.MaxIdleConn)
 		DB = db
 		db.AutoMigrate(&models.AdminUser{}, &models.User{}, &models.Role{}, &models.Urls{})
-		db.Model(&models.User{}).AddForeignKey("role_id", "Role(ID)", "no action", "no action")
+		db.Model(&models.User{}).AddForeignKey("role_id", "role(id)", "no action", "no action")
 		return db, err
 	}
 	return nil, err
