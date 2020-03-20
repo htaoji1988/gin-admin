@@ -27,13 +27,6 @@ func (a *AdminUser) Test(c *gin.Context) {
 	})
 }
 
-func (a *AdminUser) Login(c *gin.Context) {
-	c.HTML(200, "login/login.html", gin.H{
-		"main_navigation": "用户&权限",
-		"title":           "用户管理",
-	})
-}
-
 func (a *AdminUser) SessionTest(c *gin.Context) {
 	//session := sessions.Default(c)
 	c.JSON(200, gin.H{

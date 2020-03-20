@@ -18,13 +18,18 @@ func InitRouter() *gin.Engine {
 	router.StaticFS("/statics3", http.Dir("website/AdminLTE-2.4.12/plugins"))
 	router.LoadHTMLGlob("website/AdminLTE-2.4.12/pages/**/*.html")
 
+	user := router.Group("")
+	{
+		User := new(controllers.User)
+		user.GET("/login", User.Login)
+	}
+
 	web := router.Group("")
 	{
 		adminUser := new(controllers.AdminUser)
 		web.GET("/test", adminUser.Test)
 		web.GET("/session_test", adminUser.SessionTest)
 		web.GET("/template_test", adminUser.Template)
-		web.GET("/login", adminUser.Login)
 	}
 
 	v1 := router.Group("/api/v1")
