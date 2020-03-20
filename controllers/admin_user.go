@@ -23,7 +23,8 @@ func (a *AdminUser) Index(c *gin.Context) {
 
 func (a *AdminUser) Test(c *gin.Context) {
 	c.JSON(200, gin.H{
-		"message": "pong",
+		"message":        "pong",
+		"request_method": c.Request.Method,
 	})
 }
 

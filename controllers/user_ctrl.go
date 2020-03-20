@@ -9,7 +9,7 @@ type User struct {
 // 用户登录页面
 func (a *User) Login(c *gin.Context) {
 	c.HTML(200, "login/login.html", gin.H{
-		"message": "aaaaa",
+		"message": "",
 	})
 }
 
