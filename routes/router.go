@@ -13,18 +13,16 @@ func InitRouter() *gin.Engine {
 	store := cookie.NewStore([]byte("secret"))
 	router.Use(sessions.Sessions("mysession", store))
 
-	router.StaticFS("/statics1", http.Dir("website/AdminLTE-2.4.12/bower_components"))
-	router.StaticFS("/statics2", http.Dir("website/AdminLTE-2.4.12/dist"))
-	router.StaticFS("/statics3", http.Dir("website/AdminLTE-2.4.12/plugins"))
+	router.StaticFS("/statics", http.Dir("website/AdminLTE-2.4.12"))
 	router.LoadHTMLGlob("website/AdminLTE-2.4.12/pages/**/*.html")
 
-	user := router.Group("")
+	user := router.Group("user")
 	{
 		User := new(controllers.User)
 		user.GET("/login", User.Login)
 	}
 
-	web := router.Group("")
+	web := router.Group("test")
 	{
 		adminUser := new(controllers.AdminUser)
 		web.GET("/test", adminUser.Test)
