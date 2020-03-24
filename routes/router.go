@@ -16,13 +16,14 @@ func InitRouter() *gin.Engine {
 	router.StaticFS("/statics", http.Dir("website/AdminLTE-2.4.12"))
 	router.LoadHTMLGlob("website/AdminLTE-2.4.12/pages/**/*.html")
 
-	user := router.Group("user")
+	user := router.Group("/user")
 	{
 		User := new(controllers.User)
 		user.GET("/login", User.Login)
+		user.POST("/login", User.Login)
 	}
 
-	web := router.Group("test")
+	web := router.Group("/test")
 	{
 		adminUser := new(controllers.AdminUser)
 		web.GET("/test", adminUser.Test)
